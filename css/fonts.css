@@ -1,1 +1,31 @@
+/**
+ * fonts.css
+ * Font definitions for TOKEN4PLAY™ GitHub Pages project
+ * 
+ * This file defines @font-face rules for the Work Grotesk typeface
+ * using .woff2 format with font-display: swap for optimal loading performance.
+ */
 
+/* Work Grotesk Regular - Font Weight 400 */
+@font-face {
+  font-family: 'Work Grotesk';
+  src: local('Work Grotesk Regular'),
+       local('WorkGrotesk-Regular'),
+       local('Work Grotesk'),
+       url('/fonts/work-grotesk-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Work Grotesk Medium - Font Weight 500 */
+@font-face {
+  font-family: 'Work Grotesk';
+  src: local('Work Grotesk Medium'),
+       local('WorkGrotesk-Medium'),
+       local('Work Grotesk Medium'),
+       url('/fonts/work-grotesk-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
