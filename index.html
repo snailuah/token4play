@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOKEN4PLAY</title>
   <style>
     * {
@@ -16,68 +16,94 @@
       color: #111;
     }
     header {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
       align-items: center;
-      padding: 20px 40px;
+      padding: 20px 60px;
+      font-size: 14px;
       background: #f0f0f0;
     }
-    nav a, .contact, .cta {
-      margin-left: 20px;
-      font-size: 14px;
+    .logo {
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    nav a {
       text-decoration: none;
       color: #111;
+    }
+    .contact {
+      text-align: right;
+      line-height: 1.5;
     }
     .cta {
       color: #0066ff;
       font-weight: bold;
+      text-align: right;
       cursor: pointer;
     }
     .hero {
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
+      padding: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .hero img {
       width: 100%;
-      border-radius: 16px;
+      height: auto;
+      border-radius: 20px;
       object-fit: cover;
+      aspect-ratio: 16 / 9;
     }
     .overlay-text {
       position: absolute;
       color: white;
       font-size: 16px;
-      max-width: 300px;
+      max-width: 260px;
+      line-height: 1.5;
     }
     .top-left {
-      top: 60px;
-      left: 80px;
+      top: 80px;
+      left: 100px;
     }
     .bottom-left {
-      bottom: 60px;
-      left: 80px;
+      bottom: 80px;
+      left: 100px;
     }
     .headline {
+      margin-top: 100px;
+      padding: 0 40px 60px;
       text-align: center;
-      margin-top: 80px;
     }
     .subwords {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
       font-size: 14px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      max-width: 1000px;
+      margin-inline: auto;
     }
     .big-text {
-      font-size: clamp(4rem, 12vw, 10rem);
+      font-size: clamp(5rem, 14vw, 12rem);
       font-weight: bold;
       letter-spacing: 0.1em;
-      background: linear-gradient(to bottom, #000 50%, rgba(0,0,0,0));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 8px 6px rgba(0,0,0,0.2));
+      color: #111;
+      position: relative;
+    }
+    .big-text::after {
+      content: 'TOKEN4PLAY';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      transform: scaleY(-1);
+      color: #000;
+      opacity: 0.1;
+      filter: blur(4px);
     }
   </style>
 </head>
@@ -90,8 +116,8 @@
       <a href="#">LOCATION</a>
     </nav>
     <div class="contact">
-      <span>+38 (097) 152 48 17</span><br>
-      <span>DELOVAYA STREET V2<br>KYIV</span>
+      <div>+38 (097) 152 48 17</div>
+      <div>DELOVAYA STREET V2<br>KYIV</div>
     </div>
     <div class="cta">REQUEST A CALL →</div>
   </header>
