@@ -3,91 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Token4Play</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Mono&display=swap" rel="stylesheet">
+  <title>TETRISHALL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Mono&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    body {
+
+    html, body {
+      height: 100%;
       font-family: 'Noto Sans', sans-serif;
       background: #000;
       color: #fff;
       overflow-x: hidden;
     }
-    .wrapper {
-      max-width: 1560px;
-      margin: 0 auto;
-      padding: 28px 26px;
-    }
+
     .hero {
       position: relative;
       width: 100%;
       height: 100vh;
-      background: url('https://images.unsplash.com/photo-1665686308363-7e6bd1a53f08?auto=format&fit=crop&w=3200&q=80') center/cover no-repeat;
+      overflow: hidden;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      align-items: flex-start;
+      text-align: center;
     }
-    .hero-text {
-      font-size: 14px;
-      margin-left: 1616px;
-      margin-top: 104px;
-    }
-    .hero-title {
-      font-family: 'Noto Mono', monospace;
-      font-size: 190px;
-      letter-spacing: -3px;
-      margin-top: auto;
-      margin-bottom: 114px;
-      margin-left: 190px;
-    }
-    .overlay {
+
+    .hero::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.2);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('https://images.unsplash.com/photo-1533560904424-e24fc3e879c6');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.4) blur(2px);
       z-index: 1;
+      transform: scale(1.05);
     }
-    .caption {
-      position: relative;
+
+    .hero h1 {
+      font-size: 4rem;
       z-index: 2;
-      font-size: 20px;
-      max-width: 60%;
-      margin-top: 40px;
-    }
-    .blur-heading {
-      font-size: 72px;
-      filter: blur(16px);
-      font-weight: bold;
-      margin: 40px 0;
-    }
-    .tag {
-      margin-top: 60px;
-      color: red;
-      font-size: 18px;
+      filter: blur(0);
+      color: #fff;
+      text-transform: uppercase;
       font-family: 'Noto Mono', monospace;
+      animation: fadeInUp 1.2s ease-out forwards;
+      opacity: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      z-index: 2;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      animation: pulse 2s infinite;
+      z-index: 2;
+    }
+
+    @keyframes pulse {
+      0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      50% { transform: translateX(-50%) translateY(10px); opacity: 0.6; }
+      100% { transform: translateX(-50%) translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
   <div class="hero">
-    <div class="overlay"></div>
-    <div class="wrapper">
-      <div class="hero-text">every day at token4play ... x12</div>
-      <div class="hero-title">T</div>
-      <div class="caption">About us</div>
-    </div>
-  </div>
-  <div class="wrapper">
-    <div class="blur-heading">Discovering <span style="color: #ccc">Conditions</span> of Attention</div>
-    <div class="tag">/ Who We Are</div>
-    <p style="margin-top: 20px; max-width: 800px; line-height: 1.6;">Token4Play is a digital collective of minds, creating bold and effective design solutions, where detail meets ambition. Welcome to where curiosity lives and distractions dissolve.</p>
+    <h1>TETRISHALL</h1>
+    <p>Every day at token4play ×12</p>
+    <div class="scroll-down">Scroll to explore ↓</div>
   </div>
 </body>
 </html>
