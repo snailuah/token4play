@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TOKEN4PLAY™ - Оренда цифрових ігор для PS4/PS5. Тимчасовий доступ = повна гра.">
+    <meta name="keywords" content="PlayStation, PS4, PS5, ігри, оренда, цифрові ігри, TOKEN4PLAY">
+    <title>TOKEN4PLAY™ — TEMPORARY ACCESS = FULL PLAY</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="fonts/clash-grotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/clash-grotesk-medium.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- GSAP for Advanced Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Ensure full mobile responsiveness: 1440px → 1024px → 768px → 375px -->
+</head>
+<body>
+    <!-- SECTION: NAVIGATION -->
+    <nav class="navigation" id="navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">T4P.</span>
+            </div>
+            <div class="nav-links">
+                <a href="#games" class="nav-link">ІГРИ</a>
+                <a href="#how-it-works" class="nav-link">ЯК ЦЕ ПРАЦЮЄ</a>
+                <a href="#instructions" class="nav-link">ІНСТРУКЦІЯ</a>
+            </div>
+            <div class="nav-cta">
+                <a href="#contact" class="nav-button orange-text">Запит в Direct →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro Words Animation (scattered background text) -->
+    <div class="intro-words" id="intro-words">
+        <span class="intro-word" data-word="тимчасово">тимчасово</span>
+        <span class="intro-word" data-word="доступ">доступ</span>
+        <span class="intro-word" data-word="повна">повна</span>
+        <span class="intro-word" data-word="гра">гра</span>
+        <span class="intro-word" data-word="digital">digital</span>
+        <span class="intro-word" data-word="token">token</span>
+        <span class="intro-word" data-word="play">play</span>
+        <span class="intro-word" data-word="доступно">доступно</span>
+    </div>
+
+    <!-- MAIN PAGE Label (parallax scroll element) -->
+    <div class="main-page-label" id="main-page-label">
+        <span class="main-page-text">MAIN PAGE</span>
+    </div>
+
+    <!-- SECTION: HERO -->
+    <section class="hero-section" id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-word orange-text">TOKEN4</span>
+                    <span class="hero-word orange-text">PLAY™</span>
+                </h1>
+                <div class="hero-tagline">
+                    <span class="tagline-word">Temporary</span>
+                    <span class="tagline-word">Access</span>
+                    <span class="tagline-word">=</span>
+                    <span class="tagline-word">Full</span>
+                    <span class="tagline-word">Play</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-gaming-setup.jpg" alt="Gaming Setup" class="hero-img">
+            </div>
+            <div class="hero-cta">
+                <button class="scroll-to-games orange-text" id="scroll-to-games">
+                    Переглянути ігри →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: STATS -->
+    <section class="stats-section" id="stats">
+        <div class="stats-container">
+            <div class="stats-left">
+                <p class="stats-description">
+                    Наша місія у створенні цієї платформи для TOKEN4PLAY™ полягає у з'єднанні 
+                    людей зі спільними інтересами та високими вимогами до ігрового досвіду, 
+                    які обирають цифровий центр для гри, відпочинку та розваг.
+                </p>
+            </div>
+            <div class="stats-right">
+                <div class="stat-item">
+                    <div class="stat-number">29</div>
+                    <div class="stat-unit">Ігор</div>
+                    <div class="stat-arrow">↗</div>
+                    <div class="stat-description">Доступно зараз</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8-14</div>
+                    <div class="stat-unit">Днів</div>
+                    <div class="stat-arrow">↙</div>
+                    <div class="stat-description">Період оренди</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">9%</div>
+                    <div class="stat-unit">Ціна</div>
+                    <div class="stat-arrow">↗</div>
+                    <div class="stat-description">Від повної вартості</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-unit">Доступ</div>
+                    <div class="stat-description">Безперервна підтримка</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: GAMES -->
+    <section class="games-section" id="games">
+        <div class="games-container">
+            <h2 class="section-title orange-text">AVAILABLE GAMES</h2>
+            <div class="games-grid" id="games-grid">
+                <!-- Game cards will be dynamically generated here -->
+                <!-- Each card structure:
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="images/games/game-title.jpg" alt="Game Title">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Game Title</h3>
+                        <div class="game-price-info">
+                            <span class="full-price">1,999 ₴</span>
+                            <span class="rental-period">8 днів</span>
+                        </div>
+                        <div class="rental-price">180 ₴</div>
+                        <div class="renewal-options">
+                            <span class="renewal-half">4% додати</span>
+                            <span class="renewal-full">6% продовжити</span>
+                        </div>
+                        <button class="game-cta orange-text">Запит в Direct</button>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: BLUR FOCUS CATEGORIES -->
+    <section class="categories-section" id="categories">
+        <div class="categories-container">
+            <div class="categories-labels">
+                <h2 class="category-label blur-text" data-category="games">GAMES</h2>
+                <h2 class="category-label blur-text" data-category="consoles">CONSOLES</h2>
+                <h2 class="category-label blur-text" data-category="access">ACCESS</h2>
+            </div>
+            <div class="categories-content">
+                <div class="category-cards" id="category-cards">
+                    <!-- Dynamic content based on focused category -->
+                </div>
+            </div>
+            <div class="categories-info">
+                <div class="category-info-item">
+                    <span class="info-name">PlayStation Store</span>
+                    <span class="info-detail">Офіційний доступ</span>
+                </div>
+                <div class="category-info-item">
+                    <span class="info-name">Digital Library</span>
+                    <span class="info-detail">Ваша бібліотека</span>
+                </div>
+                <div class="category-info-item">
+                    <span class="info-name">Account Security</span>
+                    <span class="info-detail">Захищений акаунт</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: HOW IT WORKS -->
+    <section class="how-it-works-section" id="how-it-works">
+        <div class="how-it-works-container">
+            <div class="section-background-text">
+                <span class="bg-blur-text">HOW IT...</span>
+            </div>
+            <div class="staggered-title">
+                <span class="stagger-word orange-text">EASY</span>
+                <span class="stagger-word orange-text">ACCESS</span>
+            </div>
+            <div class="how-it-works-content">
+                <div class="how-it-works-left">
+                    <h3 class="section-subtitle">PROCESS</h3>
+                    <p class="section-text">
+                        Ми створили максимально простий процес доступу до ігор. 
+                        Тимчасовий токен надає повний доступ до обраної гри 
+                        протягом орендного періоду.
+                    </p>
+                    <a href="#instructions" class="section-cta orange-text">Детальна інструкція →</a>
+                </div>
+                <div class="how-it-works-right">
+                    <div class="process-image">
+                        <img src="images/process-illustration.jpg" alt="Process Illustration">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: INSTRUCTIONS -->
+    <section class="instructions-section" id="instructions">
+        <div class="instructions-container">
+            <div class="instruction-block">
+                <div class="instruction-content">
+                    <h2 class="instruction-title">SETUP</h2>
+                    <p class="instruction-text">
+                        Отримайте доступ до обраної гри через тимчасовий акаунт. 
+                        Встановлення та запуск займають до 10 хвилин. 
+                        Всі дані зберігаються у вашому профілі PlayStation.
+                    </p>
+                </div>
+                <div class="instruction-image">
+                    <img src="images/setup-process.jpg" alt="Setup Process">
+                </div>
+            </div>
+            
+            <div class="instruction-block">
+                <div class="instruction-content">
+                    <h2 class="instruction-title">MOBILE</h2>
+                    <p class="instruction-text">
+                        Керування через мобільний додаток PlayStation. 
+                        Завантаження, встановлення та керування грою 
+                        доступне з будь-якого місця через ваш телефон.
+                    </p>
+                </div>
+                <div class="instruction-image">
+                    <img src="images/mobile-control.jpg" alt="Mobile Control">
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions-bottom">
+            <p class="instructions-summary">
+                Замість простого представлення функцій, дизайн зосереджується на 
+                продажу досвіду. Він підкреслює враження від гри у нашій системі, 
+                а не лише технічні характеристики.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION: CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h2 class="contact-title">
+                    <span class="contact-word orange-text">GET</span>
+                    <span class="contact-word orange-text">YOUR</span>
+                    <span class="contact-word orange-text">GAMES</span>
+                </h2>
+                <div class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="contact-name" placeholder="Ваше ім'я">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="contact-phone" placeholder="Номер телефону">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contact-email" placeholder="e-mail">
+                    </div>
+                    <button class="contact-cta orange-text" id="contact-cta">
+                        Запит в Direct →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="js/games-data.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/scroll-effects.js"></script>
+    <script src="js/instagram-integration.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
