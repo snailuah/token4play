@@ -1,0 +1,48 @@
+/* === STEP 2: BASE STYLES === */
+
+/* FILE: styles/base.scss (потім компілюй у main.css) */
+
+/* 1) @font-face для Work Grotesk */
+@font-face {
+  font-family: 'Work Grotesk';
+  src: url('..assets/fonts/work-grotesk-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Work Grotesk';
+  src: url('..assets/fonts/work-grotesk-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* 2) Основні змінні */
+:root {
+  --font-primary: 'Work Grotesk', sans-serif;
+  --color-accent: #FF5800;
+  --color-black: #171717;
+  --color-grey: #C8CDD8;
+}
+
+/* 3) Базові скидання */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: #fff;
+  color: var(--color-black);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
