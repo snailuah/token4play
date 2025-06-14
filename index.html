@@ -18,6 +18,7 @@
       background: #000;
       color: #fff;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     .hero {
@@ -26,6 +27,7 @@
       height: 100vh;
       overflow: hidden;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -43,33 +45,23 @@
       transform: scale(1.05);
     }
 
-    .hero h1 {
-      font-size: 4rem;
+    .hero-content {
+      position: relative;
       z-index: 2;
-      filter: blur(0);
-      color: #fff;
-      text-transform: uppercase;
-      font-family: 'Noto Mono', monospace;
       animation: fadeInUp 1.2s ease-out forwards;
       opacity: 0;
     }
 
+    .hero h1 {
+      font-size: clamp(4rem, 12vw, 8rem);
+      text-transform: uppercase;
+      font-family: 'Noto Mono', monospace;
+      margin-bottom: 20px;
+    }
+
     .hero p {
       font-size: 1.2rem;
-      z-index: 2;
-      margin-top: 20px;
-      animation: fadeIn 2s ease-out forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeInUp {
-      0% { transform: translateY(40px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      margin-bottom: 40px;
     }
 
     .scroll-down {
@@ -82,6 +74,58 @@
       z-index: 2;
     }
 
+    .content {
+      max-width: 1560px;
+      margin: 0 auto;
+      padding: 60px 28px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1.4s ease-out forwards;
+      animation-delay: 1.2s;
+      animation-fill-mode: forwards;
+    }
+
+    .headline {
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    .subwords {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      font-size: 14px;
+      gap: 10px;
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      text-transform: lowercase;
+    }
+
+    .big-text {
+      font-size: clamp(6rem, 10vw, 190px);
+      font-weight: bold;
+      font-family: 'Noto Mono', monospace;
+      letter-spacing: -2px;
+      position: relative;
+      line-height: 1;
+    }
+
+    .big-text::after {
+      content: 'TOKEN4PLAY';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      transform: scaleY(-1);
+      color: #fff;
+      opacity: 0.1;
+      filter: blur(4px);
+    }
+
+    @keyframes fadeInUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
     @keyframes pulse {
       0% { transform: translateX(-50%) translateY(0); opacity: 1; }
       50% { transform: translateX(-50%) translateY(10px); opacity: 0.6; }
@@ -91,9 +135,29 @@
 </head>
 <body>
   <div class="hero">
-    <h1>TETRISHALL</h1>
-    <p>Every day at token4play ×12</p>
+    <div class="hero-content">
+      <h1>TETRISHALL</h1>
+      <p>Every day at token4play ×12</p>
+    </div>
     <div class="scroll-down">Scroll to explore ↓</div>
+  </div>
+
+  <div class="content">
+    <section class="headline">
+      <div class="subwords">
+        <span>token</span>
+        <span>on-demand</span>
+        <span>keep</span>
+        <span>every</span>
+        <span>no</span>
+        <span>for</span>
+        <span>playstation</span>
+        <span>library</span>
+        <span>anytime</span>
+        <span>your</span>
+      </div>
+      <h2 class="big-text">TOKEN4PLAY</h2>
+    </section>
   </div>
 </body>
 </html>
