@@ -7,84 +7,92 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background: #f0f0f0;
+      font-family: Arial, sans-serif;
       color: #000;
     }
+    .grid {
+      display: grid;
+      grid-template-columns: 250px 606px 530px 410px;
+      max-width: 1920px;
+      margin: 0 auto;
+    }
     header {
+      grid-column: 1 / -1;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      background: #f0f0f0;
+      padding: 20px;
     }
-    header nav a {
-      margin: 0 15px;
+    nav a {
+      margin: 0 10px;
       text-decoration: none;
       color: #000;
       font-size: 12px;
     }
     .hero {
-      display: flex;
-      overflow: hidden;
+      grid-column: 1 / -1;
+      margin: 20px;
       border-radius: 10px;
-      margin: 20px 40px;
+      overflow: hidden;
+      position: relative;
     }
     .hero img {
       width: 100%;
-      border-radius: 10px;
+      display: block;
     }
     .hero-text {
       position: absolute;
+      top: 40px;
+      left: 40px;
       color: #fff;
-      margin: 40px;
       font-size: 12px;
     }
     .big-text {
-      margin: 100px 40px;
+      grid-column: 2 / 4;
       font-size: 180px;
       font-weight: bold;
-      letter-spacing: -10px;
       line-height: 0.9;
+      letter-spacing: -10px;
       background: linear-gradient(to bottom, black 50%, transparent 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 50px 30px rgba(0,0,0,0.2));
+      margin: 100px 0;
     }
     .big-text small {
       display: inline-block;
       font-size: 12px;
-      letter-spacing: normal;
-      transform: translateY(-50px);
       margin: 0 10px;
+      transform: translateY(-50px);
     }
   </style>
 </head>
 <body>
-  <header>
-    <div><strong>T.</strong></div>
-    <nav>
-      <a href="#">ABOUT US</a>
-      <a href="#">SERVICES</a>
-      <a href="#">LOCATION</a>
-    </nav>
-    <div>
-      <div>+38 (097) 152 48 17</div>
-      <div>DELOVAYA STREET 1/2 KYIV</div>
-      <a href="#">REQUEST A CALL →</a>
+  <div class="grid">
+    <header>
+      <div><strong>T.</strong></div>
+      <nav>
+        <a href="#">ABOUT US</a>
+        <a href="#">SERVICES</a>
+        <a href="#">LOCATION</a>
+      </nav>
+      <div>
+        <div>+38 (097) 152 48 17</div>
+        <div>DELOVAYA STREET 1/2 KYIV</div>
+        <a href="#">REQUEST A CALL →</a>
+      </div>
+    </header>
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Interior" />
+      <div class="hero-text">
+        <p>every day at tetris hall lends itself to a remarkable start</p>
+        <p>and a memorable finish, even if one doesn't leave the premises.</p>
+      </div>
     </div>
-  </header>
-
-  <div class="hero">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Interior" />
-    <div class="hero-text">
-      <p>every day at tetris hall lends itself to a remarkable start</p>
-      <p>and a memorable finish, even if one doesn't leave the premises.</p>
+    <div class="big-text">
+      <small>fall</small> TETRIS HA <small>surround yourself</small>
     </div>
-  </div>
-
-  <div class="big-text">
-    <small>fall</small> TETRIS HA <small>surround yourself</small>
   </div>
 </body>
 </html>
