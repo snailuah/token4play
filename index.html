@@ -1,143 +1,66 @@
+<!-- =============================
+   ✅ TOKEN4PLAY PROJECT: PHASE 1
+   STRUCTURE: HEADER + HERO + SLOGAN
+   FILE: index.html (Step-by-Step)
+============================= -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Token4Play</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Mono&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #eaeaea;
-      --text: #1a1a1a;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Noto Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 26px;
-      font-size: 14px;
-    }
-    nav {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-    }
-    .logo { font-weight: bold; font-size: 18px; }
-    .cta { color: #0057ff; text-decoration: none; font-weight: 600; }
-    .hero {
-      max-width: 1560px;
-      margin: 0 auto;
-      padding: 0 28px;
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-      animation: fadeInUp 1.2s ease-out both;
-    }
-    .hero img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 16px;
-    }
-    .hero-text {
-      position: absolute;
-      top: 26px;
-      left: 26px;
-      font-size: 14px;
-      color: white;
-      animation: fadeInUp 1.5s ease-out both;
-    }
-    .caption {
-      position: absolute;
-      bottom: 26px;
-      left: 26px;
-      font-size: 14px;
-      color: white;
-      background: rgba(0,0,0,0.5);
-      padding: 8px 12px;
-      border-radius: 6px;
-      animation: fadeInUp 1.5s ease-out 0.4s both;
-    }
-    .text-blocks {
-      display: grid;
-      grid-template-columns: repeat(10, 1fr);
-      text-align: center;
-      font-size: 14px;
-      margin: 80px 0 20px;
-      animation: fadeInUp 1.2s ease-out 0.6s both;
-    }
-    .big-title {
-      font-size: clamp(5rem, 10vw, 190px);
-      font-family: 'Noto Mono', monospace;
-      text-align: center;
-      letter-spacing: -1px;
-      font-weight: bold;
-      position: relative;
-      animation: fadeInUp 1.3s ease-out 0.8s both;
-    }
-    .big-title::after {
-      content: 'TOKEN4PLAY';
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      transform: scaleY(-1);
-      color: black;
-      opacity: 0.15;
-      filter: blur(6px);
-    }
-    @keyframes fadeInUp {
-      from { transform: translateY(40px); opacity: 0; }
-      to   { transform: translateY(0); opacity: 1; }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOKEN4PLAY</title>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
+
 <body>
-  <header>
-    <div class="logo">T.</div>
-    <nav>
-      <span>ABOUT US</span>
-      <span>SERVICES</span>
-      <span>LOCATION</span>
-    </nav>
-    <div>
-      <span>+38 (097) 152 48 17</span><br>
-      <span>DELOVAYA STREET V2<br>KYIV</span>
+  <!-- === HEADER === -->
+  <header class="c-header">
+    <div class="c-header__container">
+      <img src="assets/logo/token4play.png" alt="TOKEN4PLAY Logo" class="c-header__logo">
+      <nav class="c-header__nav">
+        <ul>
+          <li><a href="#about">ПРО НАС</a></li>
+          <li><a href="#catalog">КАТАЛОГ</a></li>
+          <li><a href="#rules">ПРАВИЛА</a></li>
+        </ul>
+      </nav>
+      <div class="c-header__info">Direct Only</div>
+      <a href="https://www.instagram.com/token4play/?text=Привіт! Я хочу орендувати гру [Назва гри]. Мій номер замовлення: [№]." class="c-header__cta" target="_blank">ПІДТРИМКА В INSTAGRAM</a>
     </div>
-    <a href="#" class="cta">REQUEST A CALL →</a>
   </header>
 
-  <div class="hero">
-    <img src="https://images.unsplash.com/photo-1665686308363-7e6bd1a53f08?auto=format&fit=crop&w=2400&q=80" alt="Hero image">
-    <div class="hero-text">every day at token4play lends itself to a remarkable start</div>
-    <div class="caption">and a memorable finish, even if one doesn’t leave the premises.</div>
-  </div>
+  <!-- === HERO === -->
+  <section class="c-hero">
+    <div class="c-hero__overlay">
+      <p class="c-hero__line">every session at token4play unlocks an instant thrill</p>
+      <p class="c-hero__line">and a perfect ending, wherever you play or pause</p>
+    </div>
+    <!-- твоя hero image буде фоном через CSS -->
+  </section>
 
-  <div class="text-blocks">
-    <span>token</span>
-    <span>on-demand</span>
-    <span>keep</span>
-    <span>every</span>
-    <span>no</span>
-    <span>for</span>
-    <span>playstation</span>
-    <span>library</span>
-    <span>anytime</span>
-    <span>your</span>
-  </div>
+  <!-- === SLOGAN === -->
+  <section class="c-slogan">
+    <div class="c-slogan__wrapper">
+      <!-- Маленькі слова -->
+      <div class="c-slogan__topwords">
+        <span>play</span>
+        <span>go</span>
+        <span>rent</span>
+        <span>stream</span>
+        <span>win</span>
+        <span></span> <!-- 4 без слова -->
+        <span>join</span>
+        <span>share</span>
+        <span>repeat</span>
+        <span>explore</span>
+      </div>
+      <!-- Велике слово -->
+      <h1 class="c-slogan__main">TOKEN4PLAY</h1>
+    </div>
+  </section>
 
-  <div class="big-title">TOKEN4PLAY</div>
 </body>
+
 </html>
