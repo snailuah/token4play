@@ -1,0 +1,72 @@
+/* === STEP 2: BASE & HEADER STYLES === */
+
+/* FILE: styles/main.css */
+
+@font-face {
+  font-family: 'Work Grotesk';
+  src: url('assets/fonts/work-grotesk-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Work Grotesk';
+  src: url('assets/fonts/work-grotesk-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --color-black: #171717;
+  --color-orange: #FF5800;
+  --font-base: 'Work Grotesk', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-base);
+  background: #fff;
+  color: var(--color-black);
+}
+
+.c-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px;
+}
+
+.c-header__logo img {
+  width: 80px; /* Adjust if needed after visual check */
+}
+
+.c-header__nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.c-header__nav a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.c-header__contact {
+  margin-left: auto;
+  margin-right: 40px;
+  font-weight: 400;
+}
+
+.c-header__cta a {
+  background: var(--color-orange);
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
