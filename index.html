@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-gray-100">
+<html lang="en" class="bg-[#f5f5f5]">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tetris Hall</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .reflect-text {
+    .reflect {
       position: relative;
+      display: inline-block;
     }
-    .reflect-text::after {
+    .reflect::after {
       content: attr(data-text);
       position: absolute;
       top: 100%;
@@ -17,28 +18,63 @@
       width: 100%;
       height: 100%;
       transform: scaleY(-1);
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
       overflow: hidden;
     }
   </style>
 </head>
-<body class="text-gray-900">
-  <!-- Header -->
-  <header class="flex justify-between items-center px-8 py-4 bg-gray-100">
+<body class="font-sans text-gray-900">
+
+  <!-- ✅ Header -->
+  <header class="flex justify-between items-center px-10 py-6 bg-[#f5f5f5]">
     <div class="text-3xl font-bold">T.</div>
-    <nav class="space-x-8 uppercase text-sm">
+    <nav class="flex gap-8 text-sm uppercase tracking-wider">
       <a href="#" class="hover:underline">About Us</a>
       <a href="#" class="hover:underline">Services</a>
       <a href="#" class="hover:underline">Location</a>
     </nav>
-    <div class="text-right text-xs">
-      <div>+38 (097) 152 48 17</div>
-      <div>Delovaya Street 1/2<br/>Kyiv</div>
+    <div class="text-xs text-right leading-tight">
+      <div class="font-semibold">+38 (097) 152 48 17</div>
+      <div>DELOVAYA STREET 1/2<br>KYIV</div>
     </div>
-    <a href="#" class="ml-8 text-xs text-blue-600 uppercase">Request a Call →</a>
+    <a href="#" class="ml-8 text-xs text-blue-600 uppercase tracking-wider hover:underline">Request a Call →</a>
   </header>
 
-  <!-- Hero -->
-  <section class="px-8 py-8">
-    <div class="overflow-hidden rounded-lg flex gap-4">
-      <img class="w-1/2 object-cover rounded-lg" src="https://via.placeholder.com/600x300" alt=
+  <!-- ✅ Hero Section -->
+  <section class="px-10 py-10">
+    <div class="rounded-xl overflow-hidden flex gap-0 md:gap-4 flex-col md:flex-row">
+      <div class="relative w-full md:w-1/2">
+        <img class="object-cover w-full h-full" src="https://via.placeholder.com/800x500" alt="Interior 1" />
+        <div class="absolute top-6 left-6 text-white text-xs max-w-xs">
+          every day at tetris hall lends itself to a remarkable start
+        </div>
+      </div>
+      <div class="relative w-full md:w-1/2">
+        <img class="object-cover w-full h-full" src="https://via.placeholder.com/800x500" alt="Interior 2" />
+        <div class="absolute bottom-6 left-6 text-white text-xs max-w-xs">
+          and a memorable finish,<br>
+          even if one doesn't leave the premises.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Reflection Text Section -->
+  <section class="px-10 py-20 bg-[#f5f5f5] text-center">
+    <div class="uppercase text-xs tracking-wider mb-8 flex flex-wrap justify-center gap-2">
+      <span>fall</span>
+      <span>in</span>
+      <span>love</span>
+      <span>with</span>
+      <span>your</span>
+      <span>home</span>
+      <span>surround</span>
+      <span>yourself</span>
+    </div>
+    <h1 class="reflect text-[12vw] md:text-[8vw] font-extrabold tracking-tighter leading-none" data-text="TETRIS HALL">
+      TETRIS HALL
+    </h1>
+  </section>
+
+</body>
+</html>
