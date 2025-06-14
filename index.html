@@ -1,71 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-gray-100">
+<html lang="en" class="bg-[#f5f5f5]">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tetris Hall Stats</title>
+  <title>Tetris Hall Stats with Grid</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 250px 606px 530px 410px;
+    }
+    @media (max-width: 1024px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body class="font-sans text-gray-900">
 
-  <!-- ✅ Intro Text Row -->
-  <section class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
-    <p class="text-sm max-w-md">
-      each of us has thousands of<br>
-      features, habits, and desires.<br>
-      we are constantly in search
-    </p>
-    <p class="text-sm max-w-md md:text-right">
-      but imagine for a moment<br>
-      that you have already found<br>
-      what you dreamed of
-    </p>
-  </section>
+  <!-- ✅ Grid Layout -->
+  <section class="max-w-[1920px] mx-auto grid-container px-4 py-20 gap-8">
 
-  <!-- ✅ Stats List -->
-  <section class="max-w-7xl mx-auto px-6">
-    <div class="divide-y divide-gray-400">
+    <!-- Left 250px -->
+    <div></div> <!-- empty -->
+
+    <!-- 606px: Left Text -->
+    <div class="text-sm leading-relaxed">
+      each of us has thousands of features, habits, and desires. <br>
+      we are constantly in search
+    </div>
+
+    <!-- 530px: Right Text -->
+    <div class="text-sm leading-relaxed">
+      but imagine for a moment <br>
+      that you have already found what you dreamed of
+    </div>
+
+    <!-- 410px: Empty or future content -->
+    <div></div> <!-- can be left empty or used for decoration -->
+
+    <!-- Stats Rows (span 2 main columns) -->
+    <!-- Use col-start-2 to col-span-2 to cover main content area -->
+    <div class="col-start-2 col-span-2 divide-y divide-gray-400">
 
       <!-- Stat Item 1 -->
-      <div class="flex flex-col md:flex-row justify-between items-center py-8">
+      <div class="flex justify-between items-center py-8">
         <div class="text-6xl font-bold">10/Min</div>
-        <div class="flex items-center gap-4 mt-4 md:mt-0">
+        <div class="flex items-center gap-4">
           <span class="text-xl text-blue-600">↘</span>
           <p class="text-sm">to NSC<br>Olimpiyskiy</p>
         </div>
       </div>
 
       <!-- Stat Item 2 -->
-      <div class="flex flex-col md:flex-row justify-between items-center py-8">
+      <div class="flex justify-between items-center py-8">
         <div class="text-6xl font-bold">500/M</div>
-        <div class="flex items-center gap-4 mt-4 md:mt-0">
+        <div class="flex items-center gap-4">
           <span class="text-xl text-blue-600">↘</span>
           <p class="text-sm">to metro station<br>Olimpiyskaya</p>
         </div>
       </div>
 
       <!-- Stat Item 3 -->
-      <div class="flex flex-col md:flex-row justify-between items-center py-8">
+      <div class="flex justify-between items-center py-8">
         <div class="text-6xl font-bold">2,6/Km</div>
-        <div class="flex items-center gap-4 mt-4 md:mt-0">
+        <div class="flex items-center gap-4">
           <span class="text-xl text-blue-600">↘</span>
           <p class="text-sm">to the center of<br>capital</p>
         </div>
       </div>
 
       <!-- Stat Item 4 -->
-      <div class="flex flex-col md:flex-row justify-between items-center py-8">
+      <div class="flex justify-between items-center py-8">
         <div class="flex items-center gap-4">
           <img src="https://via.placeholder.com/80x80" alt="Building" class="w-20 h-20 object-cover"/>
           <span class="text-6xl font-bold">24-26/<br>Floors</span>
         </div>
-        <div class="flex items-center gap-4 mt-4 md:mt-0">
+        <div class="flex items-center gap-4">
           <span class="text-xl text-blue-600">↖</span>
           <p class="text-sm max-w-xs">each of the apartment owners can literally feel at the top of their game – the windows and roofs of Tetris Hall offer panoramas of Pechersk</p>
         </div>
       </div>
 
     </div>
+
   </section>
 
 </body>
